@@ -1,0 +1,20 @@
+{
+  "name": "lab7",
+  "version": "1.0.0",
+  "description": "Lab 7 Project creating a Recipes API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node app.js"
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "node-uuid": "^1.4.8",
+    "prompt": "^1.0.0"
+  },
+  "author": "Karan Shah",
+  "license": "SIT"
+}

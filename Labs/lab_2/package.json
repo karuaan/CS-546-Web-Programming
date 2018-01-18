@@ -1,0 +1,14 @@
+{
+  "name": "lab2",
+  "version": "1.0.0",
+  "description": "Lab 2 Project that Prints Shapes",
+  "main": "index.js",
+  "scripts": 
+  {
+    "start": "node index.js",
+    "test": "node index.js"
+  },
+  
+  "author": "Karan Shah",
+  "license": "SIT"
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Palindrome Checker</title>
+    <script>
+        
+        function checkPalidrome() 
+        {
+            var text;
+            text = document.getElementById("words").value;
+            
+            if (typeof text === 'string')
+                {
+                    var Palidrome;
+                    Palidrome = isPalidrome(text);
+                    
+                    if (Palidrome == true)
+                        {
+                            var palindromes = document.getElementById('words').value;
+                            palindromes = document.getElementById('palinList').innerHTML;
+                            
+                            document.getElementById('checker').innerHTML = text;
+                            
+                            document.getElementById('checker').style.color = 'blue';
+                            
+                            var newEntry = document.createElement('li');
+                            var paliList = document.getElementById('palinList');
+                            newEntry.appendChild(document.createTextNode(text));
+                            console.log(palindromes);
+                            paliList.appendChild(newEntry);
+                        }
+                    else if(Palidrome == false)
+                        {
+                            var noPalindromes = document.getElementById('words').value;
+                            noPalindromes = document.getElementById('noPalinList').innerHTML;
+                            
+                            document.getElementById('checker').innerHTML = text;
+                            
+                             document.getElementById('checker').style.color = '#FF0000';
+                            
+                            var nEntry = document.createElement('li');
+                            var noPaliList = document.getElementById('noPalinList');
+                            nEntry.appendChild(document.createTextNode(text));
+                            noPaliList.appendChild(nEntry);
+                        }
+                }
+            else
+            {
+                throw "Please enter a String";
+            }
+        }
+
+        function isPalidrome(str)
+        {
+            if (!str)
+            {
+                throw "please insert text";
+            }
+            else
+            {
+                var ogStr;
+                str = str.replace(/[\W_]/g, '');
+                ogStr = str.toLowerCase();
+
+                var Str = ogStr.split('').reverse().join('');
+
+                var reversedStr = Str;
+                var Palindrome;
+
+                console.log(reversedStr);
+                console.log(ogStr);
+
+                if(ogStr == reversedStr)
+                {
+                    return Palindrome = true;
+                }
+                
+                else
+                {
+                    return Palindrome = false;
+                }
+            }
+        }
+      </script>
+      
+      <link rel = "stylesheet" href="Data/main.css">
+  </head>
+
+  <body>
+      
+  <header>
+    <h1>Palindrome Checker</h1>
+    <h2>Insert a Phrase or Word Into The Textbox and Check if It is a Palindrome!</h2>
+    <h3>Instructions:</h3>
+    <h4 id = 'blueInstructions'>Blue String = Yes, input it is a Palidrome!</h4>
+    <h4 id = 'redInstructions'>Red String = No, input is not a Palidrome!</h4>
+  </header>
+  
+  <form action="/action_page.php" id = "inputs">
+    <textarea rows="4" cols="50" name="comment" id = "words" placeholder="Enter a String"></textarea>
+    <br>  
+    <input type="button" value="Submit" onclick="checkPalidrome()" id = 'button'>
+  </form>
+      
+      <p id = 'checkerWork'>Your Word: <b id = 'checker'></b></p>
+    
+      <ul id = 'palinList'><label id = 'palidrom'>Palindromes:</label></ul>
+      <ul id = 'noPalinList'><label id = 'nopalidrom'>Not Palindromes:</label></ul>
+  </body>
+    
+    <footer>
+    <p>Created By: Karan Shah</p>
+    <p>ID Number: 10396223</p>
+    <p>I Pledge My Honor That I Have Abided By The Stevens Honors System. -Karan Shah</p>
+    <p>Contact information: <a href="mailto:kshah78@stevens.edu"> kshah78@stevens.edu</a>.</p>
+  </footer>
+</html>
+
+<style>
+    body
+    {
+       background-color: beige;
+       text-align: center;        
+    }
+    
+    #checkerWork
+    {
+        padding-bottom: 10px;
+        padding-top: 20px;
+    }
+    
+    #palindrom
+    {
+        text-align: center;
+        font-weight: bolder;
+        font-size: 250%;
+    }
+    
+    #nopalindrom
+    {
+        text-align: center;
+        font-weight: bolder;
+        font-size: 250%;
+    }
+    
+    #palinList
+    {
+        float: left;
+        text-align: center;
+        color: blue;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        list-style-type: none;
+    }
+    
+    #noPalinList
+    {
+        float: right;
+        text-align: center;
+        color: red;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        list-style-type: none;
+    }
+    
+    footer
+    {
+        padding-top: 75px;
+    }
+    
+    #blueInstructions
+    {
+        color: blue;
+    }
+    
+    #redInstructions
+    {
+        color: red;
+    }
+    
+    #button
+    {
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+</style>
